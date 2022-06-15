@@ -5,7 +5,9 @@
 
 
  Please replace NETIFY_HOST and NETIFY_PORT values so that it matches your environment.
+ 
  Default web server port is 8000.
 
  Pull requests are welcome.
+
  Enjoy.
