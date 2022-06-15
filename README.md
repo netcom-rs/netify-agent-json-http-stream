@@ -6,7 +6,7 @@
 
  Please replace NETIFY_HOST and NETIFY_PORT values so that it matches your environment.
  
- Default web server port is 8000.
+ Default web server port is 8000. Path is HOST:PORT/api/v1/dpi/traffic (without trailing slash)
 
  Pull requests are welcome.
 

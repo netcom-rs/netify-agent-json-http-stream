@@ -73,13 +73,20 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             
         print(input_data)
         
-        # - response -
+        if self.path == '/api/v1/dpi/traffic':
         
-        self.send_response(200)
-        self.send_header('Content-Type', 'application/json')
-        self.end_headers()
+            # - response -
         
-        do_rcv(self)
+            self.send_response(200)
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
+        
+            do_rcv(self)
+        else:
+            self.send_response(404)
+            self.end_headers()
+            self.wfile.write(b'ERROR 404: Not found!')
+            return
 
 
 
