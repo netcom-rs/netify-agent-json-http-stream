@@ -10,6 +10,8 @@ from xmlrpc.client import ProtocolError
 PORT = 8000
 buff_size = 4096
 #cs = False
+host = ''
+port = 2100 
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
     global do_rcv, cs, connect
@@ -17,7 +19,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         global s
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-        s.connect(('10.10.1.15', 2100))
+        s.connect((host, port))
         print('Connected to server')
 
     #connect()
