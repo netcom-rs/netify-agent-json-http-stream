@@ -7,11 +7,11 @@ import socket
 from xmlrpc.client import ProtocolError
 
 
-PORT = 8000
+WEB_PORT = 8000
 buff_size = 4096
 #cs = False
-host = ''
-port = 2100 
+NETIFY_HOST = ''
+NETIFY_PORT = 2100 
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
     global do_rcv, cs, connect
@@ -19,7 +19,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         global s
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-        s.connect((host, port))
+        s.connect((NETIFY_HOST, NETIFY_PORT))
         print('Connected to server')
 
     #connect()
@@ -89,8 +89,8 @@ Handler = MyHandler
 
 
 try:
-    with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"Starting http://0.0.0.0:{PORT}")
+    with socketserver.TCPServer(("", WEB_PORT), Handler) as httpd:
+        print(f"Starting http://0.0.0.0:{WEB_PORT}")
         httpd.allow_reuse_address = True
         httpd.serve_forever()
 except KeyboardInterrupt:
