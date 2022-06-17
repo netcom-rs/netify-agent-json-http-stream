@@ -1,5 +1,4 @@
-# Netify Agent DPI json http stream
-# 
+# Netify Agent DPI json http stream 
 
  This program is connecting to Netify Agent tcp socket and forwarding json data to http so you can use curl or other libraries to parse it more easily.
 
@@ -11,3 +10,9 @@
  Pull requests are welcome.
 
  Enjoy.
+
+# TODO
+ Argparse, so we can specify netify host and port in console.
+
+ Clean up code.
+
