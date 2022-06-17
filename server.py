@@ -9,7 +9,6 @@ from xmlrpc.client import ProtocolError
 
 WEB_PORT = 8000
 buff_size = 4096
-#cs = False
 NETIFY_HOST = ''
 NETIFY_PORT = 2100 
 
@@ -21,8 +20,6 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
         s.connect((NETIFY_HOST, NETIFY_PORT))
         print('Connected to server')
-
-    #connect()
 
     def do_rcv(self):
         global buff_size, cs
@@ -87,9 +84,6 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'ERROR 404: Not found!')
             return
-
-
-
 
 
 Handler = MyHandler
