@@ -14,9 +14,9 @@
 # TODO
  Argparse, so we can specify netify host and port in console.
 
- Threads
+ Threads - ✅
 
- Status
+ Status - ✅
 
  Clean up code.
 
